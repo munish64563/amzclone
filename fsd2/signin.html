@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><title>Sign In</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar" style="justify-content: center;">
+        <h2 class="logo" onclick="window.location.href='index.html'">AmzClone</h2>
+    </header>
+    <div class="form-container">
+        <h2>Sign-In</h2>
+        <form onsubmit="handleLogin(event)">
+            <p id="error-msg" class="error-msg">Please fill all fields.</p>
+            <div class="form-group"><label>Username</label><input type="text" id="username"></div>
+            <div class="form-group"><label>Password</label><input type="password" id="password"></div>
+            <button type="submit" class="btn">Continue</button>
+        </form>
+    </div>
+    <script>
+        function handleLogin(e) {
+            e.preventDefault();
+            const user = document.getElementById('username').value;
+            const pass = document.getElementById('password').value;
+            if(!user || !pass) {
+                document.getElementById('error-msg').style.display = 'block';
+            } else {
+                localStorage.setItem('currentUser', user);
+                window.location.href = "index.html";
+            }
+        }
+    </script>
+</body>
+</html>

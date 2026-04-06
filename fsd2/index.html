@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><title>AmzClone | Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="nav-left">
+            <button onclick="toggleSidebar(true)" class="close-btn" style="position:static; color:white;">☰</button>
+            <h2 class="logo" onclick="window.location.href='index.html'">AmzClone</h2>
+        </div>
+        <div class="nav-center"><input type="text" id="search-bar" placeholder="Search products..."></div>
+        <div class="nav-right">
+            <a href="signin.html" id="user-greet">Sign In</a>
+            <a href="cart.html">🛒 Cart (<span id="cart-count">0</span>)</a>
+        </div>
+    </header>
+
+    <aside id="sidebar" class="sidebar">
+        
+        <button onclick="toggleSidebar(false)" class="close-btn">✖</button>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="cart.html">Your Orders</a></li>
+            <li><a href="#" onclick="localStorage.removeItem('currentUser'); location.reload();">Logout</a></li>
+        </ul>
+    </aside>
+
+    <section class="hero">
+       <marquee> <h2>Big Sale is Live!</h2>  </marquee>
+        <p>Up to 70% off on Electronics</p>
+    </section>
+
+    <main class="container">
+        <h2 class="section-title">Recommended for You</h2>
+        <div id="product-grid" class="product-grid"></div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
